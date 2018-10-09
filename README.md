@@ -5,6 +5,7 @@ Pod that can be spinned to let Letsencrypt validate the domain
 Build and push the docker container (referenced in the deployment.yaml image ):
 
 `docker build -t <<repository>>/certbot-validator:latest .`
+
 `docker push <<repository>>/certbot-validator:latest`
 
 Add the following to the right namespace of your cluster:
