@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: certbot-validator
+  namespace: {{namespace}}
+  labels:
+    app: certbot-validator
+    project: certbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: certbot-validator
+  template:
+    metadata:
+      labels:
+        app: certbot-validator
+    spec:
+      containers:
+        - name: certbot-validator
+          image: {{repository}}/certbot-validator:latest
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            limits:
+              memory: 1024Mi
