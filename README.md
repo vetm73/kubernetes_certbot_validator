@@ -14,7 +14,7 @@ Kubernetes deployment:
 
 Check if the ingress serviceName and host are right:
 
-`
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -28,4 +28,4 @@ spec:
       - backend:
           serviceName: certbot-validator <-- **The name of the service defined above**
           servicePort: http
-`
+```
