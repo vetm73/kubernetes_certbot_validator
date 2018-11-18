@@ -26,5 +26,7 @@ spec:
             limits:
               memory: 1024Mi
           env:
-            - CERTBOT_CHALLENGE = challenge_from_certbot
-            - CERTBOT_RESPONSE = the_response
+            - name: CERTBOT_CHALLENGE
+              value: "challenge_from_certbot"
+            - name: CERTBOT_RESPONSE
+              value: "the_response"
